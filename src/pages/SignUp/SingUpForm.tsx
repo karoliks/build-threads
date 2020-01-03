@@ -2,7 +2,7 @@ import * as React from "react";
 import * as routes from "../../constants/routes";
 import { auth, db } from "../../firebase";
 
-interface InterfaceProps {
+interface IInterfaceProps {
   email?: string;
   error?: any;
   history?: any;
@@ -11,7 +11,7 @@ interface InterfaceProps {
   username?: string;
 }
 
-interface InterfaceState {
+interface IInterfaceState {
   email: string;
   error: any;
   passwordOne: string;
@@ -20,8 +20,8 @@ interface InterfaceState {
 }
 
 export class SignUpForm extends React.Component<
-  InterfaceProps,
-  InterfaceState
+  IInterfaceProps,
+  IInterfaceState
 > {
   private static INITIAL_STATE = {
     email: "",
@@ -35,7 +35,7 @@ export class SignUpForm extends React.Component<
     return { [propertyName]: value };
   }
 
-  constructor(props: InterfaceProps) {
+  constructor(props: IInterfaceProps) {
     super(props);
     this.state = { ...SignUpForm.INITIAL_STATE };
   }
@@ -49,11 +49,9 @@ export class SignUpForm extends React.Component<
     auth
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then((authUser: any) => {
-
         // Create a user in your own accessible Firebase Database too
         db.doCreateUser(authUser.user.uid, username, email)
           .then(() => {
-
             this.setState(() => ({ ...SignUpForm.INITIAL_STATE }));
             history.push(routes.HOME);
           })
@@ -76,7 +74,7 @@ export class SignUpForm extends React.Component<
       username === "";
 
     return (
-      <form onSubmit={(event) => this.onSubmit(event)}>
+      <form onSubmit={event => this.onSubmit(event)}>
         <input
           value={username}
           onChange={event => this.setStateWithEvent(event, "username")}

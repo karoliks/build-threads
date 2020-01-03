@@ -9,6 +9,7 @@ import { Landing } from "../pages/Landing";
 import { PasswordForget } from "../pages/PasswordForget";
 import { SignIn } from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
+import "./App.css";
 import { Navigation } from "./Navigation";
 
 class AppComponent extends React.Component {
@@ -31,9 +32,9 @@ class AppComponent extends React.Component {
   public render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="App">
           <Navigation />
-          <hr />
+          {/* <hr /> */}
           <Switch>
             <Route exact={true} path={routes.LANDING} component={Landing} />
             <Route exact={true} path={routes.SIGN_UP} component={SignUp} />

@@ -1,22 +1,22 @@
 import * as React from "react";
 import { auth } from "../../firebase";
 
-interface InterfaceProps {
+interface IInterfaceProps {
   error?: any;
   history?: any;
   passwordOne?: string;
   passwordTwo?: string;
 }
 
-interface InterfaceState {
+interface IInterfaceState {
   error?: any;
   passwordOne?: string;
   passwordTwo?: string;
 }
 
 export class PasswordChangeForm extends React.Component<
-  InterfaceProps,
-  InterfaceState
+  IInterfaceProps,
+  IInterfaceState
 > {
   private static INITIAL_STATE = {
     error: null,

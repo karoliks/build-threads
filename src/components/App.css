@@ -1,0 +1,45 @@
+.App {
+  padding: 0;
+  background-image: linear-gradient(to top, #ebebeb 0%, #97d9e1 100%);
+  min-height: 100vh;
+}
+
+.Navigation {
+  display: flex;
+  background: rgb(39, 39, 39);
+  color: white;
+  min-height: 100px;
+  justify-content: flex-end;
+}
+.Nav-List {
+  list-style: none;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2em;
+  font-family: Arial;
+}
+
+/* hr {
+  border-style: none;
+} */
+
+/* button {
+  background: tomato;
+  border: none;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1em;
+  font-family: Arial;
+} */
+
+.User-Box {
+  display: flex;
+  background: white;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1140px;
+}

@@ -1,10 +1,10 @@
 import * as React from "react";
 
-interface InterfaceProps {
+interface IInterfaceProps {
   users?: any;
 }
 
-export class UserList extends React.Component<InterfaceProps, {}> {
+export class UserList extends React.Component<IInterfaceProps, {}> {
   constructor(props: any) {
     super(props);
   }

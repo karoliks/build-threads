@@ -2,22 +2,22 @@ import * as React from "react";
 import * as routes from "../../constants/routes";
 import { auth } from "../../firebase";
 
-interface InterfaceProps {
+interface IInterfaceProps {
   email?: string;
   error?: any;
   history?: any;
   password?: string;
 }
 
-interface InterfaceState {
+interface IInterfaceState {
   email: string;
   error: any;
   password: string;
 }
 
 export class SignInForm extends React.Component<
-  InterfaceProps,
-  InterfaceState
+  IInterfaceProps,
+  IInterfaceState
 > {
   private static INITIAL_STATE = {
     email: "",
@@ -29,7 +29,7 @@ export class SignInForm extends React.Component<
     return { [propertyName]: value };
   }
 
-  constructor(props: InterfaceProps) {
+  constructor(props: IInterfaceProps) {
     super(props);
 
     this.state = { ...SignInForm.INITIAL_STATE };
