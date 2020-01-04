@@ -57,7 +57,6 @@ export const AccountComponent = () => {
         });
         return (
           <ContentConatiner>
-            {/* <img src={slengbukser} alt="Slengbukser" /> */}
             <UserInfoContainer>
               <Image />
               <div>
