@@ -5,8 +5,6 @@ import styled from "styled-components";
 import anonymous from "../../anonymous.svg";
 import { AuthUserContext } from "../../firebase/AuthUserContext";
 import { withAuthorization } from "../../firebase/withAuthorization";
-import { PasswordForgetForm } from "../PasswordForget/PasswordForgetForm";
-import { PasswordChangeForm } from "./PasswordChangeForm";
 const useState = React.useState;
 
 const Image = styled.img.attrs({ src: anonymous })`
@@ -65,8 +63,6 @@ export const AccountComponent = () => {
               <div>
                 <h1>Username: {displayName} </h1>
                 <h1>Account: {(authUser as any).email}</h1>
-                <PasswordForgetForm />
-                <PasswordChangeForm />
               </div>
             </UserInfoContainer>
           </ContentConatiner>
