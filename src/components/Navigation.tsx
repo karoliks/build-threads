@@ -1,9 +1,40 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import * as routes from "../constants/routes";
 import { AuthUserContext } from "../firebase/AuthUserContext";
 import "./App.css";
 import { SignOutButton } from "./SignOutButton";
+
+const Nav = styled.nav`
+  display: flex;
+  background: rgb(39, 39, 39);
+  color: white;
+  min-height: 100px;
+  justify-content: flex-end;
+  /* width: 100vw; */
+`;
+
+const NavList = styled.ul`
+  list-style: none;
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2em;
+  font-family: Arial;
+`;
+
+const ButtonLink = styled(Link)`
+  background: tomato;
+  border: none;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1em;
+  font-family: Arial;
+`;
 
 export const Navigation = () => (
   <AuthUserContext.Consumer>
@@ -17,8 +48,8 @@ const navStyle = {
 };
 
 const NavigationAuth = () => (
-  <nav className="Navigation">
-    <ul className="Nav-List">
+  <Nav>
+    <NavList>
       <li>
         <Link style={navStyle} to={routes.LANDING}>
           Landing
@@ -37,23 +68,23 @@ const NavigationAuth = () => (
       <li>
         <SignOutButton />
       </li>
-    </ul>
-  </nav>
+    </NavList>
+  </Nav>
 );
 
 const NavigationNonAuth = () => (
-  <nav className="Navigation">
-    <ul className="Nav-List">
+  <Nav>
+    <NavList>
       <li>
         <Link style={navStyle} to={routes.LANDING}>
           Landing
         </Link>
       </li>
       <li>
-        <Link style={navStyle} to={routes.SIGN_IN}>
+        <ButtonLink style={navStyle} to={routes.SIGN_IN}>
           Sign In
-        </Link>
+        </ButtonLink>
       </li>
-    </ul>
-  </nav>
+    </NavList>
+  </Nav>
 );

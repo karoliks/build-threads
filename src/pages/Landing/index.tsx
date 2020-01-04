@@ -1,10 +1,12 @@
 import * as React from "react";
+import ContentConatiner from "src/components/contentContainer/ContentContainer";
+
 import "../Pages.css";
 
 export const Landing = () => {
   return (
-    <div className="Landing-Page">
+    <ContentConatiner>
       <h2>Landing Page</h2>
-    </div>
+    </ContentConatiner>
   );
 };

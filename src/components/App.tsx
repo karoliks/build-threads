@@ -1,5 +1,7 @@
 import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import styled from "styled-components";
+
 import * as routes from "../constants/routes";
 import { firebase } from "../firebase";
 import { withAuthentication } from "../firebase/withAuthentication";
@@ -11,6 +13,16 @@ import { SignIn } from "../pages/SignIn";
 import { SignUp } from "../pages/SignUp";
 import "./App.css";
 import { Navigation } from "./Navigation";
+
+const StyledApp = styled.div`
+  padding: 0;
+  background-image: linear-gradient(
+    to top,
+    #ebebeb 0%,
+    rgb(176, 205, 255) 100%
+  );
+  min-height: 100vh;
+`;
 
 class AppComponent extends React.Component {
   constructor(props: any) {
@@ -32,7 +44,7 @@ class AppComponent extends React.Component {
   public render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <StyledApp>
           <Navigation />
           {/* <hr /> */}
           <Switch>
@@ -47,7 +59,7 @@ class AppComponent extends React.Component {
             <Route exact={true} path={routes.HOME} component={Home} />
             <Route exact={true} path={routes.ACCOUNT} component={Account} />
           </Switch>
-        </div>
+        </StyledApp>
       </BrowserRouter>
     );
   }

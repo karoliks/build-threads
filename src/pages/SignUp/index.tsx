@@ -1,18 +1,40 @@
 import * as React from "react";
 import { Link, withRouter } from "react-router-dom";
+import styled from "styled-components";
+
 import * as routes from "../../constants/routes";
 import { SignUpForm } from "./SingUpForm";
 
+const linkStyle = {
+  textDecoration: "none"
+};
+
+const SignUpContainer = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  background: white;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  margin: auto;
+  margin-top: 70px;
+  padding: 50px;
+`;
+
 const SignUpComponent = () => (
-  <div>
+  <SignUpContainer>
     <h1>SignUp</h1>
     <SignUpForm />
-  </div>
+  </SignUpContainer>
 );
 
 export const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
+    <br />
+    Don't have an account?{" "}
+    <Link style={linkStyle} to={routes.SIGN_UP}>
+      Sign Up
+    </Link>
   </p>
 );
 

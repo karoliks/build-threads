@@ -1,6 +1,38 @@
 import * as React from "react";
+import styled from "styled-components";
 import * as routes from "../../constants/routes";
 import { auth } from "../../firebase";
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  /* background: pink; */
+`;
+
+const StyledInput = styled.input`
+  box-sizing: border-box;
+  border-style: none;
+  width: 350px;
+  height: 50px;
+  padding: 13px 15px;
+  margin-bottom: 24px;
+`;
+
+const StyledButton = styled.button`
+  background: tomato;
+  border: none;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1em;
+  font-family: Arial;
+  width: 100px;
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 interface IInterfaceProps {
   email?: string;
@@ -59,25 +91,25 @@ export class SignInForm extends React.Component<
     const isInvalid = password === "" || email === "";
 
     return (
-      <form onSubmit={event => this.onSubmit(event)}>
-        <input
+      <StyledForm onSubmit={event => this.onSubmit(event)}>
+        <StyledInput
           value={email}
           onChange={event => this.setStateWithEvent(event, "email")}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <StyledInput
           value={password}
           onChange={event => this.setStateWithEvent(event, "password")}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <StyledButton disabled={isInvalid} type="submit">
           Sign In
-        </button>
+        </StyledButton>
 
         {error && <p>{error.message}</p>}
-      </form>
+      </StyledForm>
     );
   }
 

@@ -1,5 +1,40 @@
 import * as React from "react";
+import styled from "styled-components";
+
 import { auth } from "../../firebase";
+
+const StyledInput = styled.input`
+  box-sizing: border-box;
+  border-style: none;
+  /* width: 100%; */
+  height: 50px;
+  padding: 13px 15px;
+  margin-bottom: 24px;
+  background-color: rgb(232, 240, 254) !important;
+`;
+
+const StyledButton = styled.button`
+  background: tomato;
+  border: none;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1em;
+  font-family: Arial;
+  /* width: 100px; */
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* background: pink; */
+`;
 
 export class PasswordForgetForm extends React.Component {
   private static INITIAL_STATE = {
@@ -37,19 +72,19 @@ export class PasswordForgetForm extends React.Component {
     const isInvalid = email === "";
 
     return (
-      <form onSubmit={(event) => this.onSubmit(event)}>
-        <input
+      <StyledForm onSubmit={event => this.onSubmit(event)}>
+        <StyledInput
           value={email}
-          onChange={(event) => this.setStateWithEvent(event, "email")}
+          onChange={event => this.setStateWithEvent(event, "email")}
           type="text"
           placeholder="Email Address"
         />
-        <button disabled={isInvalid} type="submit">
+        <StyledButton disabled={isInvalid} type="submit">
           Reset My Password
-        </button>
+        </StyledButton>
 
         {error && <p>{error.message}</p>}
-      </form>
+      </StyledForm>
     );
   }
 
