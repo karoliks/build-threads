@@ -1,24 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import anonymous from "../anonymous.svg";
 import * as routes from "../constants/routes";
 import { AuthUserContext } from "../firebase/AuthUserContext";
 import "./App.css";
-import { SignOutButton } from "./SignOutButton";
-
-const Image = styled.img.attrs({ src: anonymous })`
-  /* height: 400px; */
-  height: 50px;
-  width: 50px;
-  background: rgb(232, 240, 254);
-  border-radius: 50%;
-  border-style: solid;
-  border-color: tomato;
-  object-fit: contain;
-  border-width: 2px;
-  margin-right: 50px;
-`;
+import DropDown from "./DropDown";
 
 const Nav = styled.nav`
   display: flex;
@@ -74,13 +60,9 @@ const NavigationAuth = () => (
           Home
         </Link>
       </li>
+
       <li>
-        <Link style={navStyle} to={routes.ACCOUNT}>
-          <Image />
-        </Link>
-      </li>
-      <li>
-        <SignOutButton />
+        <DropDown />
       </li>
     </NavList>
   </Nav>
