@@ -12,13 +12,18 @@ const LogoStuff = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  h1 {
+    font-family: Raleway;
+    margin: 0px;
+  }
 `;
 
 const Image = styled.img.attrs({ src: logo })`
   /* height: 400px; */
   height: 50px;
   width: 50px;
-  margin: 20px;
+  margin: 10px;
 `;
 
 const Nav = styled.nav`
@@ -94,6 +99,14 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
   <Nav>
     <NavList>
+      <li>
+        <Link style={navStyle} to={routes.HOME}>
+          <LogoStuff>
+            <Image />
+            <h1>Build Threads</h1>
+          </LogoStuff>
+        </Link>
+      </li>
       <li>
         <Link style={navStyle} to={routes.LANDING}>
           Landing
