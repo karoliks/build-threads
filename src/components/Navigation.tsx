@@ -1,10 +1,25 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import logo from "../build-threads-logo-v1-tomato.svg";
 import * as routes from "../constants/routes";
 import { AuthUserContext } from "../firebase/AuthUserContext";
 import "./App.css";
 import DropDown from "./DropDown";
+
+const LogoStuff = styled.div`
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Image = styled.img.attrs({ src: logo })`
+  /* height: 400px; */
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+`;
 
 const Nav = styled.nav`
   display: flex;
@@ -18,7 +33,7 @@ const Nav = styled.nav`
 const NavList = styled.ul`
   list-style: none;
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
   font-size: 1.2em;
@@ -50,6 +65,12 @@ const navStyle = {
 const NavigationAuth = () => (
   <Nav>
     <NavList>
+      <li>
+        <LogoStuff>
+          <Image />
+          <h1>Build Threads</h1>
+        </LogoStuff>
+      </li>
       <li>
         <Link style={navStyle} to={routes.LANDING}>
           Landing

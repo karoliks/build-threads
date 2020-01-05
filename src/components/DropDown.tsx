@@ -20,8 +20,8 @@ const ImageButton = styled.button`
 `;
 
 const FullDropDown = styled.div`
-  float: right;
-  right: 0;
+  /* float: right; */
+  /* right: 0; */
 `;
 
 const DropDownContent = styled.div`
