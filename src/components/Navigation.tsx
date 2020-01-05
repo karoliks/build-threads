@@ -66,10 +66,12 @@ const NavigationAuth = () => (
   <Nav>
     <NavList>
       <li>
-        <LogoStuff>
-          <Image />
-          <h1>Build Threads</h1>
-        </LogoStuff>
+        <Link style={navStyle} to={routes.HOME}>
+          <LogoStuff>
+            <Image />
+            <h1>Build Threads</h1>
+          </LogoStuff>
+        </Link>
       </li>
       <li>
         <Link style={navStyle} to={routes.LANDING}>
